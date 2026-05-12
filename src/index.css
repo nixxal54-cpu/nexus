@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg-primary: #080810;
+  --color-bg-secondary: #0f0f1a;
+  --color-bg-tertiary: #161628;
+  --color-accent-primary: #6c63ff;
+  --color-accent-secondary: #00d4ff;
+  --color-accent-warm: #ff6b6b;
+  --color-accent-gold: #ffd700;
+  --color-text-primary: #f0f0ff;
+  --color-text-secondary: #8888aa;
+  --color-text-muted: #444466;
+  --color-border-subtle: #1e1e3a;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+* {
+  border-color: var(--color-border-subtle);
+}
+
+.glass-card {
+  background: rgba(15, 15, 26, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+}

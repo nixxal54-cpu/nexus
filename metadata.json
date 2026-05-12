@@ -1,0 +1,6 @@
+{
+  "name": "Nexus",
+  "description": "An AI-powered second brain that remembers everything.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": []
+}
