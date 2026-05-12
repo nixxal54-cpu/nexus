@@ -1,11 +1,17 @@
 import { Express } from "express";
-import pkg from "@prisma/client";
-const { PrismaClient } = pkg;
+import { createClient } from "@libsql/client";
+import { PrismaLibSQL } from "@prisma/adapter-libsql";
+import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { GoogleGenAI } from "@google/genai";
 
-const prisma = new PrismaClient();
+const libsql = createClient({
+  url: process.env.DATABASE_URL || "file:./dev.db",
+});
+const adapter = new PrismaLibSQL(libsql);
+const prisma = new PrismaClient({ adapter });
+
 const JWT_SECRET = process.env.JWT_SECRET || "nexus-super-secret-key";
 
 function getAI() {
