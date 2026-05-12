@@ -1,5 +1,6 @@
 import { Express } from "express";
-import { PrismaClient } from "@prisma/client";
+import pkg from "@prisma/client";
+const { PrismaClient } = pkg;
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { GoogleGenAI } from "@google/genai";
